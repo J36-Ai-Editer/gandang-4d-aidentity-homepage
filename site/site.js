@@ -1,0 +1,7 @@
+const sound=document.getElementById('sound');
+const audio=document.getElementById('bgm');
+let pending=false;
+if(sound&&audio){sound.addEventListener('click',async()=>{if(pending)return;if(!audio.paused){audio.pause();sound.setAttribute('aria-pressed','false');sound.setAttribute('aria-label','배경음악 켜기');document.getElementById('audio-status').textContent='배경음악 정지';return;}pending=true;try{await audio.play();sound.setAttribute('aria-pressed','true');sound.setAttribute('aria-label','배경음악 끄기');document.getElementById('audio-status').textContent='배경음악 재생 중';}catch{document.getElementById('audio-status').textContent='음악을 재생하지 못했습니다. 다시 선택해 주세요.';}finally{pending=false;}});document.addEventListener('visibilitychange',()=>{if(document.hidden){audio.pause();sound.setAttribute('aria-pressed','false');sound.setAttribute('aria-label','배경음악 켜기');}});}
+const play=document.getElementById('play-game'),close=document.getElementById('game-close');
+const frame=document.getElementById('game-frame'),embedded=document.getElementById('embedded-game');
+if(play&&close&&frame&&embedded){play.addEventListener('click',()=>{audio?.pause();sound?.setAttribute('aria-pressed','false');sound?.setAttribute('aria-label','배경음악 켜기');frame.src='/game3d/';embedded.hidden=false;frame.focus();});close.addEventListener('click',()=>{frame.removeAttribute('src');embedded.hidden=true;play.focus();});window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!embedded.hidden){frame.removeAttribute('src');embedded.hidden=true;play.focus();}});}

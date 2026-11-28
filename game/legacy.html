@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간당간당 — 아이소메트릭 마을 기술검증</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div><strong>간당간당</strong><span>소나무 마을 · 첫 방문</span></div>
+        <span class="badge">무료 체험</span>
+      </header>
+
+      <section class="game-layout" aria-label="마을 체험">
+        <div class="stage">
+          <canvas id="game" tabindex="0" width="960" height="560" aria-label="아이소메트릭 마을 게임 화면"></canvas>
+          <output id="debug" aria-live="polite">플레이어: 준비 중 · 배치: 0개</output>
+        </div>
+
+        <aside class="decorate" aria-label="마을 꾸미기">
+          <section class="quest" aria-label="첫 마을 의뢰">
+            <small>첫 마을 의뢰</small>
+            <h2>마을에 꽃 한 송이</h2>
+            <p id="quest-progress" aria-live="polite">① 보라색 옷의 마을지기에게 다가가 대화하세요.</p>
+            <small>이번 방문에서 진행하는 체험 의뢰</small>
+          </section>
+          <h2>마을 꾸미기</h2>
+          <p>물건을 고르고 빈 타일을 누르세요.</p>
+          <button type="button" data-prop="flower">꽃밭</button>
+          <button type="button" data-prop="lantern">등불</button>
+          <button type="button" data-prop="bench">나무 의자</button>
+          <div class="place-actions">
+            <button id="confirm" type="button" disabled>배치 확정</button>
+            <button id="cancel" type="button" disabled>취소</button>
+          </div>
+          <p id="message" role="status" aria-live="polite">마을을 둘러보세요.</p>
+        </aside>
+      </section>
+
+      <nav class="controls" aria-label="이동 및 상호작용">
+        <div class="dpad">
+          <button type="button" class="up" data-dir="up" aria-label="위로 이동">▲</button>
+          <button type="button" class="left" data-dir="left" aria-label="왼쪽으로 이동">◀</button>
+          <button type="button" class="down" data-dir="down" aria-label="아래로 이동">▼</button>
+          <button type="button" class="right" data-dir="right" aria-label="오른쪽으로 이동">▶</button>
+        </div>
+        <button id="talk" type="button">마을지기와 대화 · E</button>
+      </nav>
+      <p class="help">방향키 / WASD 또는 길을 눌러 이동 · E로 대화 · 물건 선택 → 빈 칸 선택 → 배치 확정</p>
+      <footer>기술검증용 무료 체험 · 계정·건강 API·실제 보상 미연결</footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+

@@ -1,0 +1,95 @@
+:root {
+  --surface: #f8f6f0;
+  --panel: #fffdf7;
+  --ink: #263a36;
+  --muted: #4b6058;
+  --primary: #1b5e5a;
+  --line: #adb6a3;
+  --radius: 8px;
+  font-family: system-ui, "Malgun Gothic", sans-serif;
+  color: #263a36;
+  background: #f4f2e8;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface); word-break: keep-all; overflow-wrap: break-word; }
+button { font: inherit; cursor: pointer; touch-action: none; }
+button:disabled { opacity: .48; cursor: not-allowed; }
+button:focus-visible { outline: 3px solid #266d79; outline-offset: 2px; }
+.app { min-height: 100dvh; max-width: 1370px; margin: auto; padding: 24px; }
+.hud {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 4px 4px 12px;
+}
+.hud div { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.hud strong { font-size: 1.4rem; font-family: 'Malgun Gothic', sans-serif; letter-spacing: -.07em; }
+.hud span { font-size: .93rem; }
+.badge { border: 1px solid #799d80; border-radius: 18px; padding: 5px 11px; }
+.game-layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 16px; }
+.stage {
+  position: relative; min-width: 0; align-self: start;
+  background: #cbe8e2; border: 2px solid #8ea69a; border-radius: 12px;
+  overflow: hidden;
+}
+#game { display: block; width: 100% !important; height: auto !important; image-rendering: pixelated !important; background: #dce7d3; }
+#debug {
+  position: absolute; left: 10px; bottom: 10px; padding: 5px 9px;
+  background: #fffdf0e6; border-radius: 6px; font-size: .85rem;
+}
+.decorate {
+  padding: 16px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.decorate h2 { font-size: 1.05rem; margin: 0 0 8px; }
+.quest { padding: 12px; margin: 0 0 18px; background: #e6ecd9; border-left: 3px solid #678467; }
+.quest small { font-size: .75rem; color: #53644c; }
+.quest h2 { margin-top: 8px; }
+.help { text-align: center; font-size: .85rem; color: #52665a; line-height: 1.6; }
+.decorate p { font-size: .88rem; line-height: 1.45; }
+.decorate button, #talk {
+  min-height: 44px; border: 1px solid #8aa18b; border-radius: 8px;
+  background: #f4f4df; color: #263a36;
+}
+.decorate > button { width: 100%; margin: 4px 0; }
+.decorate button:hover:not(:disabled), #talk:hover { background: #d9e5d7; }
+.decorate button:focus-visible, #talk:focus-visible { outline: 3px solid var(--primary); }
+.place-actions { display: grid; gap: 6px; margin-top: 10px; }
+#confirm { background: var(--primary); color: white; }
+#message { min-height: 3em; }
+.controls { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 9px; }
+@media (min-width: 761px) {
+  .controls { width: calc(100% - 256px); margin-top: -150px; min-height: 150px; }
+  .help { width: calc(100% - 256px); }
+}
+.dpad { display: grid; grid-template-columns: repeat(3, 55px); grid-template-rows: repeat(2, 49px); gap: 4px; }
+.dpad button {
+  border: 1px solid #7b9d89; border-radius: 9px; background: #e1edda;
+  color: #22493d; font-size: 1.4rem;
+}
+.up { grid-column: 2; }
+.left { grid-column: 1; grid-row: 2; }
+.down { grid-column: 2; grid-row: 2; }
+.right { grid-column: 3; grid-row: 2; }
+#talk { padding: 0 15px; }
+footer { text-align: center; color: #61706b; font-size: .82rem; padding: 3px 0 10px; }
+@media (max-width: 760px) {
+  .app { padding: 8px; }
+  .game-layout { grid-template-columns: 1fr; }
+  .decorate { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .decorate h2 { width: 100%; }
+  .quest { width: 100%; margin-bottom: 8px; }
+  .decorate p { width: 100%; margin: 3px 0; }
+  .decorate > button { width: auto; flex: 1; min-width: 90px; }
+  .place-actions { display: flex; width: 100%; }
+  .place-actions button { flex: 1; }
+  .controls { justify-content: space-around; gap: 8px; }
+  #talk { font-size: .9rem; }
+}
+@media (max-width: 420px) {
+  .controls { flex-wrap: wrap; }
+  #talk { min-height: 44px; width: 100%; }
+  .hud { align-items: start; }
+  .badge { white-space: nowrap; font-size: .75rem; }
+  .hud span { font-size: .8rem; }
+}
+

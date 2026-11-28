@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#193327">
+  <title>간당간당4D · 마을 입구</title>
+  <link rel="stylesheet" href="./src/login.css">
+</head>
+<body>
+  <div class="landscape" aria-hidden="true"></div>
+  <div class="petals" aria-hidden="true"></div>
+  <div class="utilities">
+  <select id="login-language" aria-label="언어">
+    <option value="ko">한국어</option><option value="en">English</option>
+    <option value="ja">日本語</option><option value="zh">简体中文</option>
+  </select>
+  <button class="music" id="login-music" aria-label="배경음악 켜기" aria-pressed="false"><span aria-hidden="true">♫</span></button>
+  </div>
+  <main class="arrival">
+    <header class="masthead">
+      <h1 aria-label="간당간당4D"><span aria-hidden="true">간당</span><span aria-hidden="true">간당</span></h1>
+    </header>
+    <section class="entry" aria-labelledby="entry-title">
+      <h2 id="entry-title">3초 만에 회원가입</h2>
+      <div class="providers" aria-label="간편 로그인">
+        <button type="button" data-provider="구글"><span class="google" aria-hidden="true"><img src="./assets/login-google.svg" alt=""></span>구글</button>
+        <button type="button" data-provider="네이버"><span class="naver" aria-hidden="true"><img src="./assets/login-naver.svg" alt=""></span>네이버</button>
+        <button type="button" data-provider="카카오"><span class="kakao" aria-hidden="true"><img src="./assets/login-kakaotalk.svg" alt=""></span>카카오</button>
+        <button type="button" data-provider="애플"><span class="apple" aria-hidden="true"><img src="./assets/login-apple.svg" alt=""></span>애플</button>
+      </div>
+      <button type="button" class="email" id="email-toggle" aria-expanded="false" aria-controls="email-form">이메일로 로그인</button>
+      <form id="email-form" hidden>
+        <label><span id="email-label">이메일</span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span id="password-label">비밀번호</span><input name="password" type="password" required minlength="8" autocomplete="current-password"></label>
+        <button class="email" type="submit">로그인</button>
+      </form>
+      <p id="auth-status" role="status" hidden></p>
+      <a class="guest" href="./"><span id="guest-label">로그인 없이 체험하기</span> <small>Beta</small></a>
+    </section>
+  </main>
+  <script type="module" src="./src/login.ts"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "status": "awaiting_user_review",
+  "published": false,
+  "designs": [
+    "aidentity-web.html",
+    "aidentity-app.html",
+    "gandang-web.html",
+    "gandang-app.html"
+  ],
+  "brandit_brands": {
+    "gandang": "e60eed30-f481-4c8c-9cdd-c3022a2ad479",
+    "aidentity": "6e2a3a40-9e66-4d34-b68b-411a93fd7e82"
+  },
+  "mobile_scope": "mobile app-style web prototypes, not native app binaries",
+  "baseline": "Brandit COVE and RIWOL templates; N.BeAI Blue structure and copy; local integration and factual corrections"
+}

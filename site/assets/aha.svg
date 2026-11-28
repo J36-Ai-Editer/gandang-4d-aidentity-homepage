@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="AHA: mirrored A forms around a central H">
+<title>AHA · Aidentity</title>
+<desc>A steady central H with perfectly mirrored A forms and two quiet outward echoes. Native vector paths, transparent background.</desc>
+<g fill="#63A99B" fill-rule="evenodd" opacity=".07">
+<path d="M68 502L148 214H204L284 502H225L209 440H143L127 502Z M156 388H196L176 306Z" transform="translate(-28 0)"/>
+<path d="M68 502L148 214H204L284 502H225L209 440H143L127 502Z M156 388H196L176 306Z" transform="translate(748 0) scale(-1 1)"/>
+</g>
+<g fill="#63A99B" fill-rule="evenodd" opacity=".15">
+<path d="M68 502L148 214H204L284 502H225L209 440H143L127 502Z M156 388H196L176 306Z" transform="translate(-14 0)"/>
+<path d="M68 502L148 214H204L284 502H225L209 440H143L127 502Z M156 388H196L176 306Z" transform="translate(734 0) scale(-1 1)"/>
+</g>
+<g fill="#0E6157" fill-rule="evenodd"><path d="M68 502L148 214H204L284 502H225L209 440H143L127 502Z M156 388H196L176 306Z"/><path d="M68 502L148 214H204L284 502H225L209 440H143L127 502Z M156 388H196L176 306Z" transform="translate(720 0) scale(-1 1)"/></g>
+<path fill="#063F3A" d="M290 200H342V325H378V200H430V516H378V377H342V516H290Z"/>
+</svg>

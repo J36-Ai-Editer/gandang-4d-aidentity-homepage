@@ -1,0 +1,127 @@
+:root{font-family:"Noto Sans KR","Malgun Gothic",system-ui,sans-serif;color:#203326;background:#203c31}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100dvh}
+.landscape,.petals{position:fixed;inset:0;pointer-events:none}
+.landscape{background:linear-gradient(180deg,#132e2590 0%,transparent 40%,#101e16ad 100%),url('/assets/login-village.webp') center 49%/cover no-repeat}
+.arrival{position:relative;min-height:100dvh;width:min(100% - 36px,1080px);margin:auto;display:grid;grid-template-columns:1fr minmax(320px,392px);align-items:end;gap:2rem;padding:clamp(24px,6vw,80px) 0}
+.masthead{color:#fff2d4;text-shadow:0 4px 22px #17291e}
+.masthead span{font-size:clamp(1rem,2vw,1.5rem);font-weight:800;letter-spacing:.12em}
+h1{font-family:"Batang",serif;font-size:clamp(3.25rem,9vw,8rem);line-height:1;margin:.2em 0 0;letter-spacing:-.085em}
+.entry{background:#fff9e9;border:1px solid #e5d2ac;border-radius:12px;padding:24px;box-shadow:0 14px 50px #17251e66}
+h2{font-size:1rem;margin:0 0 14px;letter-spacing:-.03em}
+.providers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+button,a{font:inherit}
+button{cursor:pointer;color:inherit}
+.providers button,.email{border:1px solid #dacfb7;background:#fffdf6;border-radius:7px;font-size:.83rem;font-weight:700}
+.providers button{display:grid;justify-items:center;gap:5px;padding:8px 2px}
+.providers span{display:grid;place-items:center;width:26px;height:26px;border-radius:5px;font-family:Arial,sans-serif;font-size:17px;font-weight:900}
+.google{color:#285cc7}.naver{background:#0a794a;color:white}.kakao{background:#f6d64a;color:#34241a}.apple{background:#282a27;color:white}
+.email,.guest{min-height:46px;width:100%;margin-top:12px}
+.guest{display:flex;align-items:center;justify-content:center;gap:8px;background:#284e3e;color:#fff4d9;border-radius:7px;text-decoration:none;font-size:.88rem;font-weight:800;padding:9px}
+.guest small{text-transform:uppercase;font-size:.63rem;letter-spacing:.09em;border:1px solid #fff4d981;border-radius:3px;padding:2px 3px}
+.guest span{margin-left:auto}.guest:hover{background:#37614b}
+button:hover{background:#f4ecd8}button:focus-visible,a:focus-visible{outline:3px solid #b77835;outline-offset:3px}
+#auth-status{color:#60472e;font-size:.8rem;line-height:1.45;margin:10px 0 0}
+.petal{position:absolute;top:-24px;left:var(--left);width:var(--size);height:calc(var(--size)*.67);border-radius:70% 0 70% 10%;background:#f4bab9;opacity:.83;animation:drift var(--duration) var(--delay) linear infinite}
+@keyframes drift{0%{transform:translate3d(0,-12px,0) rotate(0)}50%{transform:translate3d(6vw,50dvh,0) rotate(210deg)}100%{transform:translate3d(13vw,108dvh,0) rotate(420deg)}}
+@media(max-width:700px){.arrival{grid-template-columns:minmax(0,1fr);align-content:end;gap:20px;padding:32px 0 max(20px,env(safe-area-inset-bottom))}.entry{padding:17px}.masthead{padding-left:4px}.landscape{background-position:48% center}}
+@media(prefers-reduced-motion:reduce){.petals{display:none}}
+
+.providers{gap:10px}
+.providers button{border:0;background:transparent;padding:3px 0 5px}
+.providers span{width:44px;height:44px;border-radius:50%;box-shadow:0 2px 8px #493e2329;background:#fffdf6}
+.providers .naver{background:#0a794a}.providers .kakao{background:#f6d64a}.providers .apple{background:#282a27}
+.providers button:hover span{outline:2px solid #cfbb8b;outline-offset:2px}
+.music{position:fixed;z-index:2;right:18px;top:18px;height:44px;width:44px;border:1px solid #ffe9c1aa;border-radius:50%;background:#203b2edb;color:#fff1d3;font-size:1.15rem}
+.music:hover,.music[aria-pressed=true]{background:#3d624a}
+h1{font-size:clamp(2.5rem,7vw,6rem)}
+#email-form{display:grid;gap:9px;margin-top:14px}
+#email-form label{display:grid;gap:4px;font-size:.82rem;font-weight:700}
+#email-form input{width:100%;min-height:42px;padding:8px 10px;border:1px solid #daceb1;border-radius:6px;background:#fffdf6;color:#203326;font:inherit}
+#email-form .email{margin-top:2px;background:#f0e4c6}
+/* Centered entry stack with the village artwork visible on both sides. */
+.arrival{width:min(calc(100% - 32px),376px);grid-template-columns:minmax(0,1fr);align-content:center;align-items:center;gap:clamp(20px,5vh,46px);padding:66px 0 30px}
+.masthead{text-align:center}
+.masthead h1{display:grid;justify-items:center;gap:1px;margin:0;font-family:"Malgun Gothic",system-ui,sans-serif;font-size:clamp(3.2rem,9vw,5.2rem);line-height:.97;letter-spacing:-.12em;transform:rotate(-6deg);color:#fff1cb;text-shadow:0 3px #875443,1px 5px #503822,0 9px 18px #162419a0}
+.masthead h1 span{font-size:inherit;font-weight:950;letter-spacing:inherit;padding-right:.16em}
+.masthead strong{font-size:.62em;letter-spacing:-.14em;color:#ffc1a0;vertical-align:12%;padding-left:.12em}
+.entry{border-radius:20px;background:#fff8e9f5;padding:22px clamp(14px,5vw,25px);text-align:center}
+.providers{max-width:270px;margin:auto}
+#email-form{text-align:left}
+@media(max-width:700px){.arrival{align-content:center;gap:26px}.masthead{padding:0}.landscape{background-position:43% center}}
+.entry{background:transparent;border:0;box-shadow:none;padding:0 12px;color:#fff4db}
+.entry h2{text-shadow:0 2px 6px #172419;font-size:.95rem}
+.providers button{color:#fff4db;text-shadow:0 1px 4px #172419}
+.providers span{text-shadow:none}
+.email,.guest{border:1px solid #fff4dbb0;border-radius:999px}
+.email{color:#263e33;background:#fff8e9}
+.guest{background:#203b2edd}
+#auth-status,#email-form{background:#fff8e9;color:#283c2f;border-radius:12px;padding:10px}
+.masthead h1 span{display:flex;align-items:center;padding:0;animation:title-bob 4s ease-in-out infinite}
+.masthead h1 span+span{animation-delay:-.48s;margin-left:.22em}
+.masthead img{width:1.9em;height:1.16em;object-fit:contain;filter:drop-shadow(0 3px 2px #33261b80)}
+.masthead strong{padding-left:0}
+@keyframes title-bob{0%,100%{translate:0 0;rotate:-1deg}50%{translate:0 -7px;rotate:1.5deg}}
+@media(prefers-reduced-motion:reduce){.masthead h1 span{animation:none}}
+
+.providers img{width:21px;height:21px;object-fit:contain}.providers .naver img,.providers .apple img{filter:brightness(0) invert(1)}
+.landscape{background-image:url('/assets/login-village.webp');background-position:center bottom}
+.utilities{position:fixed;z-index:2;right:16px;top:16px;display:flex;gap:8px;align-items:center}
+.utilities .music,.utilities select{position:static;height:38px;border:1px solid #f9f2dd;border-radius:999px;background:#fff9e8;color:#364b41}
+.utilities .music{width:38px}.utilities select{font:inherit;font-size:.77rem;padding:0 10px}
+.arrival{justify-items:center;align-content:start;padding-top:clamp(85px,22dvh,260px);gap:clamp(25px,8dvh,96px)}
+.masthead h1{font-size:clamp(3.6rem,10vw,6.6rem);transform:rotate(-3deg)}
+.entry{width:100%;max-width:350px}
+.entry h2{width:max-content;max-width:100%;margin:0 auto 16px;text-shadow:none;background:#fff8e9;color:#324b42;padding:6px 13px;border-radius:7px}
+.providers{max-width:310px}
+.providers button{font-size:0;padding:0}
+.providers span{width:clamp(48px,9vw,65px);height:clamp(48px,9vw,65px)}
+.providers img{width:24px;height:24px}
+.providers .apple{background:#fffdf6}
+.providers .apple img{filter:brightness(0)}
+.email,.guest{border-radius:9px}
+.guest{justify-content:center}.guest span{margin:0}.guest span[aria-hidden]{margin-left:6px}
+@media(max-width:700px){.arrival{padding-top:clamp(80px,18dvh,190px);gap:clamp(26px,6dvh,64px)}}
+
+
+/* Keep the title and actions legible against the sky. */
+.arrival{width:min(calc(100% - 32px),340px);gap:clamp(22px,5.5dvh,66px)}
+.masthead h1{font-size:clamp(4.6rem,9vw,7rem);gap:0;transform:none}
+.masthead h1 span+span{margin-left:0;margin-top:-.32em}
+.masthead img{width:2em;height:1.27em;filter:drop-shadow(0 3px 0 #27635477)}
+@keyframes title-bob{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -4px;rotate:0deg}}
+.entry{max-width:324px;padding:0}
+.entry h2{margin-bottom:14px;padding:0;background:transparent;color:#143b47;font-weight:800;text-shadow:0 1px 2px #d9f5ff}
+.providers{grid-template-columns:repeat(4,60px);justify-content:center;gap:12px}
+.providers span{width:60px;height:60px;box-shadow:0 3px 8px #2252652b}
+.providers img{width:22px;height:22px}
+.email,.guest{min-height:44px;border-radius:12px}
+.email{border:1px solid #dce8e4;background:#fffdfa;color:#244039}
+.guest{border:1px solid #185b55;background:#235c55;color:#fffdf5}
+.guest small{border:0;background:#ffffff25}
+@media(max-width:360px){.providers{grid-template-columns:repeat(4,50px);gap:11px}.providers span{width:50px;height:50px}}
+.masthead h1{font-size:inherit;gap:0}
+.masthead h1 span+span{margin:0;animation-delay:-.55s}
+.masthead img{width:clamp(190px,22vw,286px);height:auto;display:block;filter:none}
+.arrival{gap:clamp(22px,5.2dvh,64px)}
+.entry{max-width:310px}
+.entry h2{font-size:.78rem;font-weight:700;text-shadow:none}
+.providers{grid-template-columns:repeat(4,minmax(44px,60px));gap:12px}
+.providers span{width:100%;height:auto;aspect-ratio:1;border:0;box-shadow:0 2px 5px #1c526b2b}
+.email,.guest{min-height:44px;border-radius:8px;border:0;font-weight:700;box-shadow:0 2px 6px #1c526b1f}
+.email{background:#fff;color:#2a423c}
+.guest{background:#eaf5f0;color:#245249}
+.guest:hover{background:#f6fffa;color:#245249}
+.guest small{background:#d1e8df;color:#245249;border-radius:4px}
+@media(max-width:360px){.providers{grid-template-columns:repeat(4,50px)}}
+.landscape{background-size:cover;background-repeat:no-repeat}
+.providers .kakao img{filter:brightness(0)}
+
+
+@font-face{font-family:"Gandang Jua";src:url('/assets/gandang-jua.woff2') format('woff2');font-display:swap}
+.landscape{background-image:linear-gradient(180deg,#132e2538 0%,transparent 36%,#101e168a 100%),url('/assets/login-village.webp');background-position:center center;background-size:cover;background-repeat:no-repeat}
+.masthead h1{font-family:"Gandang Jua","Malgun Gothic",sans-serif;font-size:clamp(5rem,11vw,7.1rem);font-weight:400;letter-spacing:-.055em;line-height:.83;color:#fff4d1;text-shadow:0 3px #ad6c50,0 6px 15px #26311e90;-webkit-text-stroke:2px #603f34;paint-order:stroke fill}
+.masthead h1 span{font-weight:400}
+.entry h2{color:#fffaf1;text-shadow:0 1px 5px #1d3225,0 1px 3px #1d3225}
+@media(min-width:900px){.arrival{margin-left:auto;margin-right:clamp(42px,8vw,170px)}}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#e5e7d7"><title>간당간당4D ver.2</title></head><body>
+<main class="stage" aria-label="간당간당4D ver.2"><canvas id="world3d" tabindex="0" aria-label="클릭 또는 방향키로 이동하는 3D 마을"></canvas>
+<nav class="camera-tools" aria-label="카메라 조절">
+<button id="sound" aria-label="배경음악 켜기" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12M9 9l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/><path class="mute-line" d="m3 3 18 18"/></svg></button>
+<button id="map-view" aria-label="마을 전체 지도 보기" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15"/></svg></button>
+<button id="rotate" aria-label="시점 돌리기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M20 12a8 8 0 1 0-2 6"/></svg></button>
+<button id="zoom-in" aria-label="가까이 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/></svg></button>
+<button id="zoom-out" aria-label="멀리 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6"/></svg></button>
+<button id="reset-view" aria-label="기본 시점으로 돌아가기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M6 9v12h12V9M10 21v-7h4v7"/></svg></button>
+</nav>
+<nav class="move-pad" aria-label="이동 버튼">
+<button data-move="w" aria-label="위로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button>
+<button data-move="a" aria-label="왼쪽으로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+<button data-move="s" aria-label="아래로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 10 6 6 6-6"/></svg></button>
+<button data-move="d" aria-label="오른쪽으로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+</nav>
+<button id="greet" class="greet" aria-label="가까운 주민에게 인사하기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11c0 5-8 10-8 10S4 16 4 11a4 4 0 0 1 8-2 4 4 0 0 1 8 2Z"/></svg></button>
+<nav id="wardrobe" class="pose-tools" aria-label="주인공 꾸미기" hidden>
+<button id="avatar-style" aria-label="주인공 남녀형 전환" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg></button>
+<button id="outfit" aria-label="한복 바꾸기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4 2 8l3 5 3-2v9h8v-9l3 2 3-5-6-4-4 4Z"/></svg></button>
+</nav>
+<output id="wetland-status" aria-live="polite"></output>
+<div id="loading" role="status" aria-label="마을 불러오는 중"><span class="spinner" aria-hidden="true"></span></div>
+<output id="position" class="sr-only" aria-live="off"></output>
+</main><script type="module" src="/src/toon.ts"></script></body></html>
